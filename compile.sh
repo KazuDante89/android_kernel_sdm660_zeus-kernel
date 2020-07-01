@@ -24,7 +24,7 @@ export KBUILD_BUILD_USER=KazuDante
 # Export Machine name
 export KBUILD_BUILD_HOST=xdadevelopers
 # Compiler String
-CC=/media/system/root1/Avalon-Clang-11.0.1/bin/clang
+CC=/media/system/root1/clang2/bin/clang
 export KBUILD_COMPILER_STRING="$(${CC} --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g')"
 # Make and Clean
 make O=$out clean
@@ -34,10 +34,10 @@ make O=$out ARCH=arm64 aurora_defconfig
 DATE_START=$(date +"%s")
 # Build Kernel
 make O=$out ARCH=arm64 \
-CC="/media/system/root1/Avalon-Clang-11.0.1/bin/clang" \
+CC="/media/system/root1/clang2/bin/clang" \
 CLANG_TRIPLE=aarch64-linux-gnu- \
-CROSS_COMPILE="/media/system/root1/Avalon-Clang-11.0.1/aarch64-linux-gnu-" \
-CROSS_COMPILE_ARM32="/media/system/root1/Avalon-Clang-11.0.1/bin/arm-linux-gnueabi-" \
+CROSS_COMPILE="/media/system/root1/clang2/aarch64-linux-gnu-" \
+CROSS_COMPILE_ARM32="/media/system/root1/clang2/bin/arm-linux-gnueabi-" \
 -j$(nproc --all) Image.gz-dtb
 DATE_END=$(date +"%s")
 DIFF=$(($DATE_END - $DATE_START))
