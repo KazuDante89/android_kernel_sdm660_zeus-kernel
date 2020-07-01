@@ -34,7 +34,7 @@ make O=$out ARCH=arm64 aurora_defconfig
 DATE_START=$(date +"%s")
 # Build Kernel
 make O=$out ARCH=arm64 \
-CC="/media/system/root1/aAvalon-Clang-11.0.1/bin/clang" \
+CC="/media/system/root1/Avalon-Clang-11.0.1/bin/clang" \
 CLANG_TRIPLE=aarch64-linux-gnu- \
 CROSS_COMPILE="/media/system/root1/Avalon-Clang-11.0.1/aarch64-linux-gnu-" \
 CROSS_COMPILE_ARM32="/media/system/root1/Avalon-Clang-11.0.1/bin/arm-linux-gnueabi-" \
